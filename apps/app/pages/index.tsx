@@ -1,7 +1,7 @@
 import { getServerSidePropsWrapper, getSession } from "@auth0/nextjs-auth0";
 
 export default function Index() {
-  
+
   return (
       <div className="h-full flex items-center justify-center">
           <div>
@@ -15,7 +15,6 @@ export default function Index() {
 
 export const getServerSideProps = getServerSidePropsWrapper(async (ctx) => {
   const session = getSession(ctx.req, ctx.res);
-  console.log(session)
 
   if (session !== null) {
     const res = ctx.res;

@@ -4,18 +4,20 @@ import './styles.css';
 import { UserProvider } from '@auth0/nextjs-auth0';
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
+import {useCore} from "../hooks/useCore";
 
 config.autoAddCss = false;
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  const core = useCore();
   return (
     <>
       <Head>
-        <title>Welcome to app!</title>
+        <title>ActionRSE App</title>
       </Head>
       <main className="app">
         <UserProvider>
-          <Component {...pageProps} />
+          <Component {...pageProps} core={core} />
         </UserProvider>
       </main>
     </>
