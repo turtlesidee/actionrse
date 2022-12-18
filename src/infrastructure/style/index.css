@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type=range].custom-slider {
+  -webkit-appearance: none;     /*nécessaire pour Chrome */
+  padding: 0;                   /* nécessaire pour IE */
+  outline: none;
+  color: #A4CB97;                  /* sert pour couleur de référence, via currentColor, pour le curseur */
+
+  background: #EFF0F6;             /* sert pour couleur de fond de la zone de déplacement */
+  box-sizing: border-box;       /* même modèle de boîte pour tous */
+  transition: opacity .2s;
+  cursor: pointer;
+  height: 3px;
+  width: 100%;
+}
+
+/* le curseur */
+input[type=range].custom-slider::-moz-range-thumb {
+  @apply rounded-full bg-neutral-800 border-0
+}
+/* barre progression avant */
+input[type=range].custom-slider::-moz-range-progress {
+  @apply h-[3px] bg-primary-text
+}
+
+/* la zone de déplacement */
+input[type=range].custom-slider::-webkit-slider-runnable-track {
+  @apply h-[3px] bg-primary-text
+}
+/* le curseur */
+input[type=range].custom-slider::-webkit-slider-thumb {
+  @apply rounded-full bg-neutral-800 border-0
+}

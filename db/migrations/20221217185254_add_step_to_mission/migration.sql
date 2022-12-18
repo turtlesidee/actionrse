@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Mission" ADD COLUMN     "step" INTEGER NOT NULL DEFAULT 1;
